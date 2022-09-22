@@ -10,11 +10,11 @@ basic.forever(function () {
     OLED.writeNumNewLine(pins.analogReadPin(AnalogPin.P1))
     basic.pause(100)
     if (pins.analogReadPin(AnalogPin.P1) >= 0 && pins.analogReadPin(AnalogPin.P1) < 35) {
-        strip.showColor(neopixel.colors(NeoPixelColors.Red))
+        strip.showColor(neopixel.colors(NeoPixelColors.Black))
         pins.servoWritePin(AnalogPin.P2, 180)
         OLED.clear()
     } else if (pins.analogReadPin(AnalogPin.P1) >= 35 && pins.analogReadPin(AnalogPin.P1) < 70) {
-        strip.showColor(neopixel.colors(NeoPixelColors.Orange))
+        strip.showColor(neopixel.colors(NeoPixelColors.White))
         pins.servoWritePin(AnalogPin.P2, 180)
         OLED.clear()
     } else if (pins.analogReadPin(AnalogPin.P1) >= 70 && pins.analogReadPin(AnalogPin.P1) < 105) {
@@ -40,6 +40,11 @@ basic.forever(function () {
     } else if (pins.analogReadPin(AnalogPin.P1) >= 245 && pins.analogReadPin(AnalogPin.P1) < 270) {
         strip.showColor(neopixel.colors(NeoPixelColors.Purple))
         pins.servoWritePin(AnalogPin.P2, 0)
+        basic.pause(1000)
+        OLED.clear()
+    } else if (pins.analogReadPin(AnalogPin.P1) >= 270 && pins.analogReadPin(AnalogPin.P1) < 500) {
+        strip.showColor(neopixel.colors(NeoPixelColors.Red))
+        pins.servoWritePin(AnalogPin.P2, 180)
         OLED.clear()
     }
 })
